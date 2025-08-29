@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User List - Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-2xl font-bold mb-4">User List</h1>
+
+        <!-- Controls -->
+        <div class="flex flex-col md:flex-row gap-3 mb-4">
+            <input type="text" id="search" placeholder="Search by name or email..."
+                class="w-full md:w-1/2 border rounded-lg px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <select id="sort"
+                class="w-full md:w-1/2 border rounded-lg px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
+                <option value="name">Sort by Name</option>
+                <option value="date">Sort by Date</option>
+            </select>
+        </div>
+
+        <!-- Table -->
+        <div class="overflow-x-auto bg-white rounded-lg shadow">
+            <table class="w-full text-left border-collapse" id="userTable">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="p-3">ID</th>
+                        <th class="p-3">Avatar</th>
+                        <th class="p-3">Name</th>
+                        <th class="p-3">Email</th>
+                        <th class="p-3">Gender</th>
+                        <th class="p-3">Location</th>
+                        <th class="p-3">Age</th>
+                        <th class="p-3">Created At</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex justify-center items-center gap-3 mt-4">
+            <button id="prevBtn" class="px-3 py-1 border rounded-lg bg-white hover:bg-gray-100 disabled:opacity-50">
+                Prev
+            </button>
+            <span id="pageInfo" class="text-gray-700"></span>
+            <button id="nextBtn" class="px-3 py-1 border rounded-lg bg-white hover:bg-gray-100 disabled:opacity-50">
+                Next
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="userModal" class="hidden fixed inset-0 bg-black/50 flex justify-center items-center p-4">
+        <div class="bg-white rounded-lg shadow-lg w-full max-w-sm p-6 relative text-center">
+            <button id="closeModal"
+                class="absolute top-2 right-3 text-gray-500 hover:text-gray-700 text-xl font-bold">&times;</button>
+            <img id="modalAvatar" src="" alt="Avatar" class="w-20 h-20 mx-auto rounded-full mb-3">
+            <h3 id="modalName" class="text-lg font-bold"></h3>
+            <p id="modalEmail" class="text-gray-600"></p>
+            <p id="modalGender" class="text-gray-600"></p>
+            <p id="modalLocation" class="text-gray-600"></p>
+            <p id="modalAge" class="text-gray-600"></p>
+            <p id="modalDate" class="text-gray-500 text-sm"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
