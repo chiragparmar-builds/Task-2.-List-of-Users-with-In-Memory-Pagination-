@@ -15,10 +15,3 @@ A simple responsive frontend implementation using **Tailwind CSS**, **HTML**, an
 
 ---
 
-##  Getting Started
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/chiragparmar-builds/Task-2.-List-of-Users-with-In-Memory-Pagination-.git
-cd Task-2.-List-of-Users-with-In-Memory-Pagination-
